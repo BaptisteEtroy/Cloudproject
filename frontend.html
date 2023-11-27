@@ -1,6 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
+    <script>
+            // This function could be used to send a command to open or close a valve immediately.
+            function changeValveStatus(valveId, action) {
+                fetch('/api/change-valve-status', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ valveId: valveId, action: action }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    alert('Valve status changed: ' + data.success);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('Failed to change valve status');
+                });
+            }
+
+            // This function sends the time set commands to the Flask backend.
+            function setTime(valveId, action, time) {
+                fetch('/api/set-time', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ deviceId: valveId, action: action, time: time }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    alert('Time set successfully for ' + valveId);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    alert('Failed to set time for ' + valveId);
+                });
+            }
+        </script>
+    
     <title>Valve Control</title>
     <style>
         body {
@@ -118,14 +161,6 @@
         <input type="time" id="closeTimeValve3">
         <button onclick="setTime('valve3', 'close', document.getElementById('closeTimeValve3').value)">Set Close Time</button>
     </div>
-
-    <script>
-        // existing changeValveStatus function...
-
-        function setTime(valve, action, time) {
-            // existing setTime function...
-        }
-    </script>
 </body>
 </html>
 
