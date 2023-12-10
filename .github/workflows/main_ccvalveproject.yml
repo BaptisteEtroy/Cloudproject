@@ -66,4 +66,4 @@ jobs:
         with:
           app-name: 'CCvalveproject'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_2D5FB04FFD62477E989E2D3ABC936563 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_D9D8E20FFC3044629BD72D40389A7425 }}
