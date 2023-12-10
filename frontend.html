@@ -81,6 +81,10 @@
         <button class="button" onclick="changeValveStatus('valve3', 'open')">Open Valve 3</button>
         <button class="button button-close" onclick="changeValveStatus('valve3', 'close')">Close Valve 3</button>
     </div>
+    <div>
+        <button class="button" onclick="changeValveStatus('valve4', 'open')">Open Valve 4</button>
+        <button class="button button-close" onclick="changeValveStatus('valve4', 'close')">Close Valve 4</button>
+    </div>
 
     <!-- Schedule Settings for Each Valve -->
     <!-- Valve 1 -->
@@ -118,12 +122,6 @@
         <input type="time" id="closeTimeValve3">
         <button onclick="setTime('valve3', 'close', document.getElementById('closeTimeValve3').value)">Set Close Time</button>
     </div>
-    
-     <!-- Valve 4 -->
-    <div>
-        <button class="button" onclick="changeValveStatus('valve4', 'open')">Open Valve 4</button>
-        <button class="button button-close" onclick="changeValveStatus('valve4', 'close')">Close Valve 4</button>
-    </div>
 
     <!-- Schedule Settings for Valve 4 -->
     <div class="time-input">
@@ -158,4 +156,3 @@
     </script>
 </body>
 </html>
-
